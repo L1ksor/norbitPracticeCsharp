@@ -1,47 +1,61 @@
-﻿namespace DataTypeTask2
+﻿using System.Text;
+
+namespace DataTypeTask2
 {
     internal class Program
     {
         static void Main(string[] args)
         {
-            int N = Convert.ToInt32(Console.ReadLine());
+            int n = Convert.ToInt32(Console.ReadLine());
 
-            Console.WriteLine(Rhomd(N));
+            Console.WriteLine(Rhomb(n));
         }
 
-        static string Rhomd(int N)
+        
+        /// <summary>
+        /// Отрисовка ромба
+        /// </summary>
+        /// <param name="n">Длина диагонали</param>
+        /// <returns>Строка из X </returns>
+        /// <exception cref="ArgumentOutOfRangeException"></exception>
+        static string Rhomb(int n)
         {
-            if (N % 2 == 0)
+            if (n % 2 == 0 || n <= 0)
             {
-                throw new ArgumentOutOfRangeException(nameof(N), "Число должно быть положительным нечётным целым");
+                throw new ArgumentOutOfRangeException(nameof(n), "Число должно быть положительным нечётным целым");
             }
-            string str = new string (' ', N/2);
-            string result = str + 'X' + str + '\n';
-            string str2 = result;
-            string str3;
-            int left;
-            int innerSpaces =  1;
-            for (int i = 1; i < N/2; i++)
-            {
-                left = N/2 - i;
-                
 
-                str3 = new string(' ', left) + 'X' + new string(' ', innerSpaces) + 'X' + new string(' ', left) + '\n';
-                str2 = str2 + str3;
+            string spaces = new string (' ', n/2);
+            string topRhomb = spaces + 'X' + spaces + '\n';
+            var result = new StringBuilder(topRhomb);
+
+            if (n == 1)
+            {
+                return result.ToString();
+            }
+
+            string row;
+            int outerSpaces;
+            int innerSpaces = 1;
+            for (int i = 1; i < n/2; i++)
+            {
+                outerSpaces = n/2 - i;
+                row = new string(' ', outerSpaces) + 'X' + new string(' ', innerSpaces) + 'X' + new string(' ', outerSpaces) + '\n';
+                result.Append(row);
                 innerSpaces += 2;
             }
 
-            for (int i = 0; i < N/2; i++)
+            for (int i = 0; i < n/2; i++)
             {
-                left = i;
-
-
-                str3 = new string(' ', left) + 'X' + new string(' ', innerSpaces) + 'X' + new string(' ', left) + '\n';
-                str2 = str2 + str3;
+                outerSpaces = i;
+                row = new string(' ', outerSpaces) + 'X' + new string(' ', innerSpaces) + 'X' + new string(' ', outerSpaces) + '\n';
+                result.Append(row);
                 innerSpaces -= 2;
             }
 
-            return str2 + str + 'X' + str + '\n';
+            result.Append(topRhomb);
+
+            return result.ToString() ;
 
         }
     }
