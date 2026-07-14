@@ -17,6 +17,9 @@ namespace DataTypeTask1
         /// <summary>
         /// Расчёт сложного процента по годам.
         /// </summary>
+        /// <param name="initialDeposit">Изначальный депозит</param>
+        /// <param name="years">На сколько лет</param>
+        /// <param name="interestRate">Процентная ставка</param>
         /// <returns>Строка с расчётом депозита для каждого года.</returns>
         static string CalculationOfFunds (double initialDeposit , double years, double interestRate)
         {
