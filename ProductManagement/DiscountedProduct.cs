@@ -8,8 +8,22 @@ namespace ProductManagement
 {
     internal class DiscountedProduct : Product
     {
-        public decimal discount {  get; set; }
-        public decimal discountPrice { get; set; }
+        public decimal Discount { get; set; }
+        public decimal DiscountPrice { get; set; }
+
+        public DiscountedProduct(string name, string manufacturer, decimal price,
+            DateTime prodictionDate, DateTime endOfProductionDate, decimal discount) 
+            : base(name, manufacturer, price, prodictionDate, endOfProductionDate)
+        {
+            Discount = discount;
+            DiscountPrice = price  - (price * (discount / 100)) ;
+        }
+
+        public override string ToString()
+        {
+            return base.ToString() + $"Скидка: {Discount}%\n" +
+                $"Цена со скидкой: {DiscountPrice}\n" ;
+        }
 
 
     }

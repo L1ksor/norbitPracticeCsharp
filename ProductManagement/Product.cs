@@ -33,8 +33,8 @@ namespace ProductManagement
         {
             return $"Название: {_name}\n" +
                 $"Цена: {_price}\n" +
-                $"Дата изготовления и окончания: {_prodictionDate} - {_endOfProductionDate} " +
-                $"Производитель: {_manufacturer}";
+                $"Дата изготовления и окончания: {_prodictionDate} - {_endOfProductionDate}\n" +
+                $"Производитель: {_manufacturer} \n";
         }
     }
 }
