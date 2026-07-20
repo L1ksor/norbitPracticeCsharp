@@ -1,4 +1,8 @@
-﻿namespace ProductManagement
+﻿using System.Diagnostics;
+using System.Text;
+using System.Xml.Linq;
+
+namespace ProductManagement
 {
     internal class Program
     {
