@@ -6,9 +6,12 @@ using System.Threading.Tasks;
 
 namespace ProductManagement
 {
+    /// <summary>
+    /// Класс продукта
+    /// </summary>
+
     internal class Product
     {
-        
         private string _name;
         private string _manufacturer;
         private decimal _price;

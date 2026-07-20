@@ -6,6 +6,9 @@ using System.Threading.Tasks;
 
 namespace ProductManagement
 {
+    /// <summary>
+    /// Потомок Product для продукта со скидкой.
+    /// </summary>
     internal class DiscountedProduct : Product
     {
         public decimal Discount { get; set; }

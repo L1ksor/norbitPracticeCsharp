@@ -1,4 +1,8 @@
-﻿namespace ProductManagement
+﻿using System.Diagnostics;
+using System.Text;
+using System.Xml.Linq;
+
+namespace ProductManagement
 {
     internal class Program
     {
@@ -9,6 +13,9 @@
                 new DiscountedProduct("Чипсы Lays cо сметаной и луком", "Lays", 180, new DateTime(2025, 12, 12), new DateTime(2030, 12,12 ), 17)
             };
 
+        /// <summary>
+        /// Консоль выбора.
+        /// </summary>
         static void Main(string[] args)
         {
 
@@ -45,6 +52,10 @@
             }
         }
 
+        /// <summary>
+        /// Ввод данных с консоли
+        /// </summary>
+        /// <returns>Кортеж.</returns>
         private static (string, string, decimal, DateTime, DateTime) ReadProductData()
         {
             Console.WriteLine("\nИмя: ");
@@ -62,6 +73,9 @@
             return data;
         }
 
+        /// <summary>
+        /// Добавление Product в список товаров.
+        /// </summary>
         public static void AddProduct ()
         {
             var data = ReadProductData();
@@ -70,6 +84,9 @@
             _products.Add(product);
         }
 
+        /// <summary>
+        /// Добавление DiscountedProduct в список товаров.
+        /// </summary>
         public static void AddDiscountedProduct()
         {
             var data = ReadProductData();
@@ -80,6 +97,9 @@
             _products.Add(discountedProduct);
         }
 
+        /// <summary>
+        /// Вывод списка товаров
+        /// </summary>
         public static void Show()
         {
             foreach (var product in _products)
