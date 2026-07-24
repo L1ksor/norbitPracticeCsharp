@@ -7,7 +7,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DataTypeTask1", "DataTypeTa
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DataTypeTask2", "DataTypeTask2\DataTypeTask2.csproj", "{D41B58D0-2072-484D-BAC9-ABFB64C4A88E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ProductManagement", "ProductManagement\ProductManagement.csproj", "{FE6F6129-F03E-41D0-9469-64DEF4C2027B}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ProductManagementTask3", "ProductManagement\ProductManagementTask3.csproj", "{FE6F6129-F03E-41D0-9469-64DEF4C2027B}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CollectionTask4", "CollectionTask4\CollectionTask4.csproj", "{0C04A4DF-E084-4701-A30E-42B5241E695D}"
 EndProject
