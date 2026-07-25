@@ -39,8 +39,15 @@
             }
             Console.WriteLine();
 
+            Console.WriteLine(stack2.Contains(40));
+
+            Console.WriteLine(stack2.Contains(9821731));
+
+            Console.WriteLine(stack2[1]);
+
             var stack3 = new SmartStack<int>();
             stack2.Peek();
+
 
         }
     }

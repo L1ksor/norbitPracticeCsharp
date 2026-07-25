@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Collections;
 
 namespace CollectionTask4
 {
@@ -32,13 +27,26 @@ namespace CollectionTask4
             PushRange(values);
         }
 
+        public int Count { get { return _count; } }
+
+        public int Capacity { get { return _capacity; } }
+
         public T Peek() => _count != 0 ? _array[_count - 1] : throw new InvalidOperationException("Стэк пуст");
 
-        public int Count => _count;
-
-        public int Capacity => _capacity;
-
-
+        public T this[int index]
+        {
+            get 
+            {
+                if (index > 0 && index < _count)
+                {
+                    return _array[index];
+                }
+                else
+                {
+                    throw new ArgumentOutOfRangeException("Выход на границы стека");
+                }
+            }
+        }
 
         public void Push(T item)
         {
@@ -72,6 +80,21 @@ namespace CollectionTask4
             _count--;
             T result = _array[_count];
             _array[_count] = default(T);
+
+            return result;
+        }
+
+        public bool Contains(T value)
+        {
+            bool result = false;
+            foreach (var item in _array)
+            {
+                if (value.Equals(item))
+                {
+                    result = true;
+                    break;
+                }
+            }
 
             return result;
         }
