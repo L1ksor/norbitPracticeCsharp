@@ -2,6 +2,10 @@
 
 namespace CollectionTask4
 {
+    /// <summary>
+    /// Умный стек.
+    /// </summary>
+    /// <typeparam name="T">Тип элементов массива.</typeparam>
     internal class SmartStack<T> : IEnumerable<T>
     {
         T[] _array;
@@ -27,10 +31,21 @@ namespace CollectionTask4
             PushRange(values);
         }
 
+        /// <summary>
+        /// Количество элементов.
+        /// </summary>
         public int Count { get { return _count; } }
 
+        /// <summary>
+        /// Количество ёмкости.
+        /// </summary>
         public int Capacity { get { return _capacity; } }
 
+        /// <summary>
+        /// Элемент вершины.
+        /// </summary>
+        /// <returns></returns>
+        /// <exception cref="InvalidOperationException"></exception>
         public T Peek() => _count != 0 ? _array[_count - 1] : throw new InvalidOperationException("Стэк пуст");
 
         public T this[int index]
@@ -48,6 +63,10 @@ namespace CollectionTask4
             }
         }
 
+        /// <summary>
+        /// Добавление элемента на вершину.
+        /// </summary>
+        /// <param name="item"></param>
         public void Push(T item)
         {
             if (_count == _capacity)
@@ -58,6 +77,12 @@ namespace CollectionTask4
             _array[_count++] = item;
         }
 
+
+        /// <summary>
+        /// Добавление коллекции.
+        /// </summary>
+        /// <param name="values"></param>
+        /// <exception cref="ArgumentNullException"></exception>
         public void PushRange(IEnumerable<T> values)
         {
             if (values is null)
@@ -71,6 +96,11 @@ namespace CollectionTask4
             }
         }
 
+        /// <summary>
+        /// Удаление элемента с вершины.
+        /// </summary>
+        /// <returns>Последний удалённый элемент</returns>
+        /// <exception cref="InvalidOperationException"></exception>
         public T Pop()
         {
             if (_count == 0)
@@ -84,6 +114,11 @@ namespace CollectionTask4
             return result;
         }
 
+        /// <summary>
+        /// Поиск элемента
+        /// </summary>
+        /// <param name="value"></param>
+        /// <returns></returns>
         public bool Contains(T value)
         {
             bool result = false;
@@ -99,6 +134,9 @@ namespace CollectionTask4
             return result;
         }
         
+        /// <summary>
+        /// Расширение стека вдвое
+        /// </summary>
         private void CapacityExtension()
         {
             _capacity = _capacity * 2;
@@ -111,6 +149,9 @@ namespace CollectionTask4
             _array = newArray;
         }
 
+        /// <summary>
+        /// Возвращает перечислитель для обхода элементов массива.
+        /// </summary>
         public IEnumerator<T> GetEnumerator()
         {
             for (int i = _count - 1; i >= 0; i--)
@@ -119,6 +160,9 @@ namespace CollectionTask4
             }
         }
 
+        /// <summary>
+        /// Возвращает перечислитель для обхода элементов массива.
+        /// </summary>
         IEnumerator IEnumerable.GetEnumerator()
         {
             return GetEnumerator();
