@@ -1,0 +1,3 @@
+{
+  "DefaultConnection": "Server=localhost\\SQLEXPRESS;Database=AirlinesDb;Integrated Security=True;TrustServerCertificate=True;"
+} 
