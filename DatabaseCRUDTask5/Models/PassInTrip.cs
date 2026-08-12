@@ -1,7 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-
-namespace DatabaseCRUDTask5.Models;
+﻿namespace DatabaseCRUDTask5.Models;
 
 public partial class PassInTrip
 {
@@ -13,7 +10,4 @@ public partial class PassInTrip
 
     public string Place { get; set; } = null!;
 
-    public virtual Passenger Passenger { get; set; } = null!;
-
-    public virtual Trip Trip { get; set; } = null!;
 }

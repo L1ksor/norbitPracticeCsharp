@@ -1,7 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-
-namespace DatabaseCRUDTask5.Models;
+﻿namespace DatabaseCRUDTask5.Models;
 
 public partial class Company
 {

@@ -1,7 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-
-namespace DatabaseCRUDTask5.Models;
+﻿namespace DatabaseCRUDTask5.Models;
 
 public partial class Trip
 {
@@ -19,7 +16,7 @@ public partial class Trip
 
     public DateTime TimeIn { get; set; }
 
-    public virtual Company Company { get; set; } = null!;
+  //  public virtual Company Company { get; set; } = null!;
 
-    public virtual ICollection<PassInTrip> PassInTrips { get; set; } = new List<PassInTrip>();
+   // public virtual ICollection<PassInTrip> PassInTrips { get; set; } = new List<PassInTrip>();
 }

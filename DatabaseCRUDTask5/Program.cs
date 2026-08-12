@@ -1,6 +1,8 @@
 ﻿using System.IO;
 using System.Text.Json;
 using DatabaseCRUDTask5.Models;
+using DatabaseCRUDTask5.ADO.NET;
+using DatabaseCRUDTask5.EF_Core;
 namespace DatabaseCRUDTask5
 {
     internal class Program
@@ -22,6 +24,7 @@ namespace DatabaseCRUDTask5
             var company1 = companies.GetById("F69F8699-7CB2-4641-9DB3-69D3A6A5DBDF");
 
             Console.WriteLine(company1?.Name ?? "Компания не найдена");
+            var company213213 = new CompanyEFRepository(sqlConnection);
         }
 
 
