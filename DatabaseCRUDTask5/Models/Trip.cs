@@ -6,7 +6,7 @@ public partial class Trip
 
     public Guid CompanyId { get; set; }
 
-    public string Plane { get; set; } = null!;
+    public string PlaneId { get; set; } = null!;
 
     public string TownFrom { get; set; } = null!;
 
@@ -18,6 +18,6 @@ public partial class Trip
 
     public override string ToString()
     {
-        return $"[Рейс {Id}] Самолет: {Plane} | Marshrut: {TownFrom} -> {TownTo} | Вылет: {TimeOut:dd.MM.yyyy HH:mm} | Прилет: {TimeIn:dd.MM.yyyy HH:mm}";
+        return $"[Рейс {Id}] Самолет: {PlaneId} | Marshrut: {TownFrom} -> {TownTo} | Вылет: {TimeOut:dd.MM.yyyy HH:mm} | Прилет: {TimeIn:dd.MM.yyyy HH:mm}";
     }
 }

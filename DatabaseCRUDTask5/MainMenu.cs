@@ -104,7 +104,7 @@ namespace DatabaseCRUDTask5
                 createDelegate: () =>
                 {
                     Console.Write("Введите имя пассажира: ");
-                    string name = Console.ReadLine() ?? "";
+                    string name = Console.ReadLine();
 
                     return new Passenger
                     {
@@ -135,7 +135,7 @@ namespace DatabaseCRUDTask5
                 createDelegate: () =>
                 {
                     Console.Write("Введите название компании: ");
-                    string name = Console.ReadLine() ?? "";
+                    string name = Console.ReadLine();
 
                     return new Company
                     {
@@ -146,7 +146,7 @@ namespace DatabaseCRUDTask5
                 updateDelegate: (company) =>
                 {
                     Console.Write($"Новое название (текущее: '{company.Name}'): ");
-                    string input = Console.ReadLine() ?? "";
+                    string input = Console.ReadLine();
 
                     if (!string.IsNullOrWhiteSpace(input))
                     {
@@ -176,8 +176,8 @@ namespace DatabaseCRUDTask5
                         trip.CompanyId = companyId;
                     }
 
-                    Console.Write("Модель самолета: ");
-                    trip.Plane = Console.ReadLine();
+                    Console.Write("Id самолета: ");
+                    trip.PlaneId = Console.ReadLine();
 
                     Console.Write("Город вылета: ");
                     trip.TownFrom = Console.ReadLine();
