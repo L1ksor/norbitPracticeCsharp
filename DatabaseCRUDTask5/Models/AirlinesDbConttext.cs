@@ -11,11 +11,6 @@ namespace DatabaseCRUDTask5.Models
             _connectionString = connectionString;
         }
 
-        protected AirlinesDbContext()
-        {
-
-        }
-
         public DbSet<Company> Companies { get; set; } = null;
         public DbSet<Passenger> Passengers { get; set; } = null;
         public DbSet<Trip> Trips { get; set; } = null;
