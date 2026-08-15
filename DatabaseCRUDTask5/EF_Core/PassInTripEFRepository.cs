@@ -1,5 +1,5 @@
-﻿using DatabaseCRUDTask5.Models;
-
+﻿using Microsoft.EntityFrameworkCore; // <-- Не забудьте импортировать!
+using DatabaseCRUDTask5.Models;
 namespace DatabaseCRUDTask5.EF_Core
 {
     internal class PassInTripEFRepository : IRepository<PassInTrip, Guid>
@@ -11,10 +11,16 @@ namespace DatabaseCRUDTask5.EF_Core
             _context = context;
         }
 
-        public List<PassInTrip> GetAll() => _context.PassInTrips.ToList();
+        public List<PassInTrip> GetAll() => _context.PassInTrips
+            .Include(pt => pt.Passenger)
+            .Include(pt => pt.Trip)
+            .ToList();
 
         /// <inheritdoc />
-        public PassInTrip? GetById(Guid id) => _context.PassInTrips.Find(id);
+        public PassInTrip? GetById(Guid id) => _context.PassInTrips
+            .Include(pt => pt.Passenger)
+            .Include(pt => pt.Trip)
+            .FirstOrDefault(pt => pt.Id == id);
 
         /// <inheritdoc />
         public void Add(PassInTrip passInTrip)
@@ -33,7 +39,7 @@ namespace DatabaseCRUDTask5.EF_Core
         /// <inheritdoc />
         public void Delete(Guid id)
         {
-            PassInTrip passInTrip = GetById(id);
+            PassInTrip? passInTrip = GetById(id);
 
             if (passInTrip != null)
             {

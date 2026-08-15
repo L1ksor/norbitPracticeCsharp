@@ -16,7 +16,8 @@ public partial class Trip
 
     public DateTime TimeIn { get; set; }
 
-  //  public virtual Company Company { get; set; } = null!;
-
-   // public virtual ICollection<PassInTrip> PassInTrips { get; set; } = new List<PassInTrip>();
+    public override string ToString()
+    {
+        return $"[Рейс {Id}] Самолет: {Plane} | Marshrut: {TownFrom} -> {TownTo} | Вылет: {TimeOut:dd.MM.yyyy HH:mm} | Прилет: {TimeIn:dd.MM.yyyy HH:mm}";
+    }
 }

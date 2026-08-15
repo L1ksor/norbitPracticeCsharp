@@ -6,5 +6,8 @@ public partial class Passenger
 
     public string Name { get; set; } = null!;
 
-    public virtual ICollection<PassInTrip> PassInTrips { get; set; } = new List<PassInTrip>();
+    public override string ToString()
+    {
+        return $"[Пассажир] ID: {Id} | Имя: {Name}";
+    }
 }

@@ -15,6 +15,7 @@ namespace DatabaseCRUDTask5.Models
         public DbSet<Passenger> Passengers { get; set; } = null;
         public DbSet<Trip> Trips { get; set; } = null;
         public DbSet<PassInTrip> PassInTrips { get; set; } = null;
+        public DbSet<Plane> Planes { get; set; } = null;
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
@@ -28,9 +29,8 @@ namespace DatabaseCRUDTask5.Models
             modelBuilder.Entity<Passenger>().ToTable("Passenger");
             modelBuilder.Entity<Trip>().ToTable("Trip");
             modelBuilder.Entity<PassInTrip>().ToTable("PassInTrip");
+            modelBuilder.Entity<Plane>().ToTable("Plane");
 
-            modelBuilder.Entity<PassInTrip>()
-                .HasKey(pt => new { pt.TripId, pt.PassengerId });
         }
     }
 }

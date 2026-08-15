@@ -11,7 +11,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ProductManagementTask3", "P
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CollectionTask4", "CollectionTask4\CollectionTask4.csproj", "{0C04A4DF-E084-4701-A30E-42B5241E695D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DatabaseCRUDTask5", "DatabaseCRUDTask5\DatabaseCRUDTask5.csproj", "{CC587AAD-7A65-4670-BFF8-4B205C4DF5D3}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DatabaseCRUDTask6", "DatabaseCRUDTask5\DatabaseCRUDTask6.csproj", "{CC587AAD-7A65-4670-BFF8-4B205C4DF5D3}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

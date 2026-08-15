@@ -23,11 +23,11 @@ namespace DatabaseCRUDTask5.ADO.NET
             sqlConnection.Open();
 
             string sqlQuery = "INSERT INTO " +
-                "Trip (CompanyId, Plane, TownFrom, TownTo, TimeOut, TimeIn) " +
-                "VALUES (@CompanyId, @Plane, @TownFrom, @TownTo, @TimeOut, @TimeIn)";
+                "Trip (CompanyId, PlaneId, TownFrom, TownTo, TimeOut, TimeIn) " +
+                "VALUES (@CompanyId, @PlaneId, @TownFrom, @TownTo, @TimeOut, @TimeIn)";
             using var command = new SqlCommand(sqlQuery, sqlConnection);
             command.Parameters.AddWithValue("@CompanyId", trip.CompanyId);
-            command.Parameters.AddWithValue("@Plane", trip.Plane);
+            command.Parameters.AddWithValue("@PlaneId", trip.PlaneId);
             command.Parameters.AddWithValue("@TownFrom", trip.TownFrom);
             command.Parameters.AddWithValue("@TownTo", trip.TownTo);
             command.Parameters.AddWithValue("@TimeOut", trip.TimeOut);
@@ -52,7 +52,7 @@ namespace DatabaseCRUDTask5.ADO.NET
                 {
                     Id = reader.GetGuid(0),
                     CompanyId = reader.GetGuid(1),
-                    Plane = reader.GetString(2),
+                    PlaneId = reader.GetString(2),
                     TownFrom = reader.GetString(3),
                     TownTo = reader.GetString(4),
                     TimeOut = reader.GetDateTime(5),
@@ -81,7 +81,7 @@ namespace DatabaseCRUDTask5.ADO.NET
                 {
                     Id = reader.GetGuid(0),
                     CompanyId = reader.GetGuid(1),
-                    Plane = reader.GetString(2),
+                    PlaneId = reader.GetString(2),
                     TownFrom = reader.GetString(3),
                     TownTo = reader.GetString(4),
                     TimeOut = reader.GetDateTime(5),
@@ -103,7 +103,7 @@ namespace DatabaseCRUDTask5.ADO.NET
             sqlConnection.Open();
             string sqlQuery = @"UPDATE Trip 
                         SET CompanyId = @CompanyId, 
-                            Plane = @Plane,
+                            PlaneId = @PlaneId,
                             TownFrom = @TownFrom, 
                             TownTo = @TownTo, 
                             TimeOut = @TimeOut, 
@@ -112,7 +112,7 @@ namespace DatabaseCRUDTask5.ADO.NET
 
             using var command = new SqlCommand(sqlQuery, sqlConnection);
             command.Parameters.AddWithValue("@CompanyId", trip.CompanyId);
-            command.Parameters.AddWithValue("@Plane", trip.Plane);
+            command.Parameters.AddWithValue("@PlaneId", trip.PlaneId);
             command.Parameters.AddWithValue("@TownFrom", trip.TownFrom);
             command.Parameters.AddWithValue("@TownTo", trip.TownTo);
             command.Parameters.AddWithValue("@TimeOut", trip.TimeOut);
