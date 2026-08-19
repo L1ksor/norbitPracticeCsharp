@@ -1,4 +1,4 @@
-﻿using Microsoft.EntityFrameworkCore; // <-- Не забудьте импортировать!
+﻿using Microsoft.EntityFrameworkCore; 
 using DatabaseCRUDTask5.Models;
 namespace DatabaseCRUDTask5.EF_Core
 {
