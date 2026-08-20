@@ -20,11 +20,12 @@ namespace DatabaseCRUDTask5
 
             using (var context = new AirlinesDbContext(connectionString))
             {
+                Console.WriteLine("1 ADO \n" +
+                    "2 EF_core");
                 string choice = Console.ReadLine();
                 MainMenu mainMenu;
                 if (choice == "2")
                 {
-                    Console.WriteLine("\nЗапуск в режиме ADO.NET...");
                     mainMenu = new MainMenu(
                         new PlaneRepository(connectionString),
                         new PassengerRepository(connectionString),
@@ -35,7 +36,6 @@ namespace DatabaseCRUDTask5
                 }
                 else
                 {
-                    Console.WriteLine("\nЗапуск в режиме EF Core...");
                     var dbContext = new AirlinesDbContext(connectionString);
                     mainMenu = new MainMenu(
                         new PlaneEFRepository(dbContext),
