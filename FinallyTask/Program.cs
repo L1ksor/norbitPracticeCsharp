@@ -1,4 +1,4 @@
-﻿using 
+﻿using System.Text.Json;
 
 namespace FinallyTask
 {
@@ -6,7 +6,13 @@ namespace FinallyTask
     {
         static void Main(string[] args)
         {
-            string connectionStirng = "Server=localhost;Port=5432;Database=testdb;User Id=postgres;Password=200620"; 
+            string jsonString = File.ReadAllText("../../../settings.json");
+
+            using JsonDocument doc = JsonDocument.Parse(jsonString);
+
+            JsonElement root = doc.RootElement;
+            string connectionString = root.GetProperty("DefaultConnection").GetString();
+
 
         }
     }
